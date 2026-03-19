@@ -12,6 +12,7 @@ def pad_sequences(seqs, pad_value=0, max_len=None):
     if max_len is None:
         max_len = max(len(seq) for seq in seqs)
     result = np.full((len(seqs), max_len), fill_value=pad_value)
+    # 只能用for循环 因为不等长
     for i, seq in enumerate(seqs):
         le = min(len(seq), max_len)
         result[i, :le] = seq[:le]

@@ -6,5 +6,4 @@ def vector_norm_3d(v):
     """
     # Your code here
     v = np.asarray(v)
-    ori_dim = v.ndim
     return np.sqrt(np.sum(v**2, axis=-1))
